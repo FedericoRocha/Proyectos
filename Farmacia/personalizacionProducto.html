@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-language" content="es">
+	<title>Personalizar Producto</title>
+	<link rel="icon" href="img/farmacia1.ico">
+	<link rel="stylesheet" href="css/estiloPersonalizacionProducto.css">
+	 <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+ 	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	 <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+	<script src="js/javaScript.js" type="text/javascript"></script>
+
+
+
+
+</head>
+<body >
+	<header>
+		<div class="container_nav">
+			<img src="img/logo.jpg" alt="Logo" class="logo">
+			<div class="container_form">
+				<form action="" class="search">
+			
+				<button type="submit"><img src="img/busqueda.png" alt="busqueda" class="busqueda"></button>
+
+		   		<label for="submit" class="submit"></label>
+				
+				<input type="search" name="Search" id="autocomplete" class="ui-autocomplete-input" placeholder="Buscar" autocomplete="off" onkeypress="autocompletar();">
+			    
+				</form>
+			</div>
+				<div class="container-carrito">
+					<a href="resumenDeCompra.html" target="_blank" class="a1"><img src="img/carrito.jpg" alt="carrito" class="carrito" ></a>
+					<p class="min-number">4</p>
+				</div>
+			
+			<nav>
+		        <ul>
+		            <li><a href="index.html" target="_blank">Home</a></li>
+		            <li><a href="index.html#productos" target="_blank">Nuestros Productos</a></li>
+		            <li><a href="index.html#pagos" target="_blank">Medios de pago</a></li>
+		            <li><a href="">Personalizacion de Producto</a></li>
+		            <li><a href="resumenDeCompra.html" target="_blank">Resumen de Compra</a></li>
+		            <li><a href="#redes">Redes Sociales</a></li>
+		            <li><a href="contacto.html" target="_blank">Contacto</a></li>
+		        </ul>
+		    </nav>
+		</div>
+   
+    
+	</header>
+
+	<main>
+		<h1 class="h2">Personalizar Producto</h1>
+		<article class="seccion">
+			<p id="etiquetaID"></p>
+			<img src="img/tapaBlanca.png"  class="etiqueta" id="tapaFrasco" >
+			<p id="mg"></p>
+		</article>
+		<div class="bloque-izquierda">
+			<h2 class="titulo">Titulo Producto</h2>
+
+			<input type="text" name="text" class="buscar" id="buscarId" placeholder="Texto Etiqueta" onkeyup="personalizar();">
+			<div class="colores-container">
+				<p class="color">Color</p>
+				<div class="container-color">
+					<div class="circle-color"></div>
+					<input type="radio" name="color" class="opcion" onchange="cambiar();">
+				</div>
+				<div class="container-color">
+					<div class="circle-color"></div>
+					<input type="radio" name="color" class="opcion" onchange="cambiar1();">
+				</div>
+				<div class="container-color">
+					<div class="circle-color"></div>
+					<input type="radio" name="color" class="opcion" onchange="cambiar2();">
+				</div>
+				<div class="container-color">
+					<div class="circle-color"></div>
+					<input type="radio" name="color" class="opcion" onchange="cambiar3();"> 
+				</div>
+				<div class="container-color">
+					<div class="circle-color"></div>
+					<input type="radio" name="color" class="opcion" onchange="cambiar4();">
+				</div>
+				
+			</div>
+
+			<a class="scroll" style=display:scroll; href="#" title="Subir arriba"><img src="img/flecha.png" class="flecha" /></a> 
+			<article>
+				<p>Forma</p>
+				<img src="img/frascos.jpg" alt="frascos" class="frascos">
+			</article>
+			
+			<div class="radio">
+				<input type="radio" name="frasco" class="opcion" onchange="cambiarTamaño();">
+
+				<input type="radio" name="frasco" class="opcion" onchange="cambiarTamaño1();">
+				
+				<input type="radio" name="frasco" class="opcion" onchange="cambiarTamaño2();">
+	   		</div>
+		</div>
+   		
+   		 <a class="button-footer" href="resumenDeCompra.html"><img src="img/finalizarCompra.png" alt="finalizarCompra" class="compra"></a>
+        <a class="button-footer" href="index.html" target="_blank"><img src="img/seguirComprando.png" alt="seguirComprando" class="compra"></a>
+
+       	<h2 class="nuevos">Nuevos Productos</h2>
+        <article class="nuevosProductos">
+		
+		<article class="slide">
+			<img src="img/nuevoProducto1.jpg">
+		</article>
+		<article class="slide">
+			<img src="img/nuevoProducto2.png">
+		</article>
+		<article class="slide">
+			<img src="img/nuevoProducto3.jpg">
+		</article>
+		<article class="slide">
+			<img src="img/nuevoProducto4.jpg">
+		</article>
+		<article class="slide">
+			<img src="img/nuevoProducto5.jpg">
+		</article>
+		
+		
+	</article>
+
+	</main>
+
+
+	<footer>
+		<div class="pie">
+			<p class="p2">Rede Sociales:</p>
+			<ul>
+			<li id="redes" name="redes"><a href="http://www.instagram.com" target="_blank" class="nombresRedes">Instagram<img src="img/instagram.jpg" class="redes"></a></li>
+			<li><a href="http://www.youtube.com" target="_blank" class="nombresRedes">Youtube <img src="img/youtube.jpg" class="redes"></a></li>
+			<li><a href="http://www.twitter.com" target="_blank" class="nombresRedes">Twitter <img src="img/twitter.jpg" class="redes"></a></li>
+			<li><a href="http://www.facebook.com" target="_blank" class="nombresRedes">Facebook <img src="img/facebook.jpg" class="redes"></a></li>
+			</ul>
+		</div>
+        
+        <div class="pie">
+        	<p class="p2">Informacion Adicional:</p>
+        	<p class="p1">E-mail: farmacia@hotmail.com.ar</p>
+        	<p class="p1">Tel: 1122-3344</p>
+        	<p class="p1">Trabajar con nosotros</p>
+        	<p class="p1">Contactanos</p>	
+
+        
+        </div>
+        
+        <div class="pie">
+        	<p class="p2">Horario de atencion: De lunes a domingos las 24hs </p>
+        	<p class="p2">Direccion:</p>
+        	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13124.516003201528!2d-58.6058167!3d-34.67669355!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1537730573612" allowfullscreen></iframe>
+        </div>
+	</footer>
+</body>
+</html>
