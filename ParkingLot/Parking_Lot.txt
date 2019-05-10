@@ -1,0 +1,146 @@
+package parkinglot;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.LinkedList;
+
+
+import javax.swing.JOptionPane;
+
+
+public class ParkingLot implements IParkingLot {
+  
+    LinkedList<Auto> listaAutos= new LinkedList<>();
+    
+    private final int ESPACIOS_DISPONIBLES=100;
+    
+    private int cantidadAutosEstacionados;
+    
+    private int espacios;
+    
+    private int precioPorDia;
+    
+    @Override
+    public Integer cantidadEstacionados() {
+      
+    if (listaAutos.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Aun no se ah detectado el ingreso de vehiculos");
+		return null;
+	} else {
+		JOptionPane.showMessageDialog(null,"La cantidad de autos estacionados es de: " + this.cantidadAutosEstacionados);
+		return cantidadAutosEstacionados;
+		}
+    }
+    @Override
+    public int espaciosDisponibles() {
+        
+        espacios=ESPACIOS_DISPONIBLES-listaAutos.size();
+      
+        JOptionPane.showMessageDialog(null,"La cantidad de espacios disponibles es de: " + this.espacios);
+        
+        return espacios;
+    }
+    @Override
+    public int precioPorDia() {
+        return precioPorDia;
+       }
+    public int getPrecioPorDia() {
+		return precioPorDia;
+        }
+    public void setPrecioPorDia(int precioPorDia) {
+		this.precioPorDia = precioPorDia;
+	}     
+    @Override
+    public void ingresoDetectado() {
+        if (listaAutos.size() < ESPACIOS_DISPONIBLES) {
+            JOptionPane.showMessageDialog(null,"Ingrese sus datos:");
+		Auto nuevoIngreso = new Auto(" ", " ",0);
+                String patente = JOptionPane.showInputDialog("Ingrese la patente del auto:");
+		nuevoIngreso.setPatente(patente);
+		String mail=JOptionPane.showInputDialog("Ingrese su Mail:");
+		nuevoIngreso.setMail(mail);
+		int codigoDeIngreso= this.cantidadAutosEstacionados+1;
+		nuevoIngreso.setCodigoDeIngreso(codigoDeIngreso);	
+			listaAutos.add(nuevoIngreso);
+			JOptionPane.showMessageDialog(null,nuevoIngreso.toString());
+			this.cantidadAutosEstacionados++;
+		} else {
+			JOptionPane.showMessageDialog(null,"El estacionamiento no posee lugares disponibles.");
+		}   
+    }
+    @Override
+    public void egresoDetectado(){ 
+       
+    int codigoDeIngreso;
+    boolean patenteCorrecta = false;
+    codigoDeIngreso=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del auto a egresar:"));
+
+    for (Auto nuevoIngreso : listaAutos) {
+	if (nuevoIngreso.getCodigoDeIngreso() == codigoDeIngreso) {
+                patenteCorrecta = true;
+			}
+	if (patenteCorrecta == true) {
+		listaAutos.remove(nuevoIngreso);
+		this.cantidadAutosEstacionados--;
+				
+	JOptionPane.showMessageDialog(null,"El vehiculo con la patente: " + nuevoIngreso.getPatente() + " y codigo de ingreso: "+nuevoIngreso.getCodigoDeIngreso()+" se ha egresado de forma correcta.");
+
+		} else {
+		JOptionPane.showMessageDialog(null,"Por favor ingrese una patente correcta o ya se realizo el egreso de dicho vehiculo.");
+		}
+            }
+          }
+
+    @Override
+    public void facturarEstadia(int PrecioPorDia) {
+
+        int codigo;
+	int facturacionPorDia = 0;
+        int diferenciaHoras;
+		
+	int contadorDeDias = 0;
+	Calendar fechaIngreso = Calendar.getInstance();
+	Calendar fechaEgreso = Calendar.getInstance();
+
+	codigo=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del auto del cual desea calcular la tarifa:"));
+		
+    for (Auto nuevoIngreso : listaAutos) {
+	if (nuevoIngreso.getCodigoDeIngreso() == codigo) {
+		nuevoIngreso.setFechaYHoraActual(new Date());
+		fechaIngreso.setTime(nuevoIngreso.getFechaYHoraDeIngreso());
+		fechaEgreso.setTime(nuevoIngreso.getFechaYHoraActual());
+
+		diferenciaHoras = (int) (fechaEgreso.getTimeInMillis()- fechaIngreso.getTimeInMillis()/86400000);
+			
+                if (diferenciaHoras > 0) {
+                    diferenciaHoras *= 24;
+				}
+		if (diferenciaHoras < 24) {
+                    contadorDeDias = 1;
+				}
+		if (diferenciaHoras > 24) {
+			for (int i = 0; i < diferenciaHoras; i++) {
+				if ((i / 24) == 0) {
+				contadorDeDias++;
+						}
+					}
+				}
+		facturacionPorDia = precioPorDia * contadorDeDias;
+                        }
+		}
+		JOptionPane.showMessageDialog(null,"La tarifa para el auto con codigo: "+codigo+" es de: $" + facturacionPorDia );
+	
+    }
+     public int facturaTotal(int facturacionPorDia){
+             
+        
+             int totalFacturacionPorDia=facturacionPorDia*listaAutos.size();
+            
+             
+             return totalFacturacionPorDia;
+                     
+                     
+           
+        
+    }
+}
