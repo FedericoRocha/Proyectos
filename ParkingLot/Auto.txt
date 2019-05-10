@@ -1,0 +1,59 @@
+
+
+package parkinglot;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+public class Auto {
+    
+    private String patente;
+    private Date fechaYHoraDeIngreso;
+    private Date fechaYHoraActual;
+    private String mail;
+    private int codigoDeIngreso;
+    
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd H:m:s");
+    
+    public Auto(String patente, String mail, int codigoDeIngreso) {
+        this.patente = patente;
+        this.fechaYHoraDeIngreso = new Date();
+        this.mail=mail;
+        this.codigoDeIngreso=codigoDeIngreso;
+    }
+    public String getPatente() {
+        return patente;
+    }
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+    public Date getFechaYHoraDeIngreso() {
+        return fechaYHoraDeIngreso;
+    }
+    public void setFechaYHoraDeIngreso(Date fechaYHoraDeIngreso) {
+        this.fechaYHoraDeIngreso = fechaYHoraDeIngreso;
+    }
+    public Date getFechaYHoraActual() {
+        return fechaYHoraActual;
+    }
+    public void setFechaYHoraActual(Date fechaYHoraDeEgreso) {
+        this.fechaYHoraActual = fechaYHoraDeEgreso;
+    }
+    public String getMail() {
+        return mail;
+    }
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+   	public int getCodigoDeIngreso() {
+		return codigoDeIngreso;
+	}
+	public void setCodigoDeIngreso(int codigoDeIngreso) {
+		this.codigoDeIngreso = codigoDeIngreso;	
+        }
+    @Override
+    public String toString() {
+		return "Se ah ingresado un vehiculo con el codigo de ingreso: "+codigoDeIngreso+" .Y la patente: "+patente;
+	}
+}
