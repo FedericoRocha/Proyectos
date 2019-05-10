@@ -1,0 +1,18 @@
+package parkinglot;
+
+
+public interface IParkingLot {
+    
+    public Integer cantidadEstacionados();
+    
+    public int espaciosDisponibles();
+    
+    public int precioPorDia();
+    
+    public void ingresoDetectado();
+    
+    public void egresoDetectado();
+    
+    public void facturarEstadia(int PrecioPorDia);
+    
+}
