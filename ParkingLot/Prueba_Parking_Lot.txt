@@ -1,0 +1,85 @@
+
+package parkinglot;
+
+import javax.swing.JOptionPane;
+
+
+public class Prueba {
+    
+   
+    public static void main(String []args){
+    
+    int opcion=0;
+    
+    final int precioPorDia =200;
+
+    ParkingLot prueba = new ParkingLot();
+
+    while (opcion!=8) {
+	opcion=Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a su estacionamiento. Por favor ingrese una opcion:\n"
+        +"\n1. Cantidad de autos estacionados actualmente.\n"
+        +"\n2. Espacios disponibles actualmente.\n"
+        +"\n3. Consultar precio por estadia.\n"
+        +"\n4. Nuevo ingreso de vehiculo.\n"
+        +"\n5. Facturar estadia.\n"
+        +"\n6. Egreso de vehiculo.\n"
+        +"\n7. Enviar email.\n"
+        +"\n8. SALIR"));
+        
+	switch (opcion) {
+	case 1:       
+                prueba.cantidadEstacionados();
+		break;                
+	case 2:
+		prueba.espaciosDisponibles();
+		break; 
+	case 3:
+                prueba.setPrecioPorDia(precioPorDia);
+		JOptionPane.showMessageDialog(null,"El precio de la estadia es de: $" + prueba.getPrecioPorDia());
+		break;
+	case 4:
+                int mensaje1=JOptionPane.showConfirmDialog(null,"¿Desea realizar el ingresar un nuevo vehiculo?");
+                if(mensaje1==JOptionPane.YES_OPTION){
+                    prueba.ingresoDetectado();
+                }else{
+                    break;
+                }
+                break;
+	case 5:
+             int mensaje2=JOptionPane.showConfirmDialog(null,"¿Desea realizar la facturacion de un vehiculo?");
+                if(mensaje2==JOptionPane.YES_OPTION){
+                prueba.facturarEstadia(precioPorDia);
+                }else{
+                    break;
+                }
+                    break;
+             
+	case 6:
+               int mensaje3=JOptionPane.showConfirmDialog(null,"¿Desea realizar el egreso de un vehiculo?");
+		
+                if(mensaje3==JOptionPane.YES_OPTION){
+                    prueba.egresoDetectado();
+                }else{
+                    break;
+                     }
+                break;
+        case 7:
+                 if(prueba.facturaTotal(precioPorDia)!=0){
+                ServicioExterno.enviarEmail("", "", "",prueba.facturaTotal(precioPorDia));
+                 }else{
+                     JOptionPane.showMessageDialog(null,"Aun no se ah realizado la facturacion");
+                     break;
+                 }
+                 break;
+        case 8:
+               
+                JOptionPane.showMessageDialog(null,"Gracias por utilizar el servicio de estacionamiento");
+		break;
+               
+	default:
+		JOptionPane.showMessageDialog(null,"Opcion incorrecta. Por favor seleccione una opcion valida.");
+			}
+
+	}
+    }
+}
