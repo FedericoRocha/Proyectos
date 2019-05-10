@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-language" content="es">
+	
+	<title>Farmacia</title>
+	
+	<link rel="icon" href="img/farmacia1.ico">
+
+	<script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+ 	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	 <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+	<link rel="stylesheet" href="css/nivo-slider.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
+   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+   
+
+    <link rel="stylesheet" href="css/estiloPaginaPrincipal.css">
+    <script src="js/javaScript.js" type="text/javascript"></script>
+	
+	
+</head>
+<body >
+
+	<header>
+		<div class="container_nav">
+			<img src="img/logo.jpg" alt="Logo" class="logo">
+			<div class="container_form">
+				<form action="" class="search">
+			
+				<button type="submit" class="butonSubmit"><img src="img/busqueda.png" alt="busqueda" class="busqueda"></button>
+
+		   		<label for="submit" class="submit"></label>
+				
+				<input type="search" name="Search" id="autocomplete" class="ui-autocomplete-input" placeholder="Buscar" autocomplete="off" onkeypress="autocompletar();">
+			    
+				</form>
+			</div>
+				<div class="container-carrito">
+					<a href="resumenDeCompra.html" target="_blank" class="a1"><img src="img/carrito.jpg" alt="carrito" class="carrito" ></a>
+					<p class="min-number" id="numeroCarrito" value="0">0</p>
+				</div>
+			
+			<nav>
+		        <ul>
+		            <li><a href="">Home</a></li>
+		            <li><a href="#productos">Nuestros Productos</a></li>
+		            <li><a href="#pagos">Medios de pago</a></li>
+		            <li><a href="personalizacionProducto.html" target="_blank">Personalizacion de Producto</a></li>
+		            <li><a href="resumenDeCompra.html" target="_blank">Resumen de Compra</a></li>
+		            <li><a href="#redes">Redes Sociales</a></li>
+		            <li><a href="contacto.html" target="_blank">Contacto</a></li>
+		        </ul>
+		    </nav>
+		</div>
+
+	</header>
+	
+	<main>
+
+		<section class="contenedor">
+            <article class="slider-wrapper theme-default">
+                <div id="slider" class="nivoSlider"> 
+                    <img src="img/medicinas.jpg" /> 
+                    <img src="img/farmacia1.jpg" /> 
+                    <img src="img/farmacia2.jpg" data-transition="slideInLeft" /> 
+                    <img src="img/farmacia3.jpg" atitle="titulo" /> 
+                </div>
+            </article>
+        </section>
+        <div class="separacion">
+        	
+        </div>
+        <article class="seccion1">
+            <div class="number">1</div>
+            <h4>Seleccione el producto</h4>
+        </article>
+        <article class="seccion1">
+             <div class="number">2</div>
+            <h4>Personalizacion del producto</h4>
+        </article>
+        <article class="seccion1">
+            <div class="number">3</div>
+            <h4>Finalice la compra
+        </article>
+        <a class="scroll" style=display:scroll; href="#" title="Subir arriba"><img src="img/flecha.png" class="flecha" /></a> 
+        <h3 id="productos" name="productos">Nuestros Productos</h3>
+       <section class="container-articulos">
+        <article class="seccion"><h3 class="precios">Actron- Precio: $72.00</h3><img src="img/actron.jpg" alt="actron" class="medicamentos"><button type="button" class="botonCarrito" id="botonCarrito" value="0" onclick="agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+        
+        <article class="seccion"><h3 class="precios">Ibuprofeno- Precio: $56.00</h3><img src="img/ibuprofeno.jpg" alt="ibuprofeno" class="medicamentos"><button type="button" class="botonCarrito" value="0" onclick=" agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+        
+        <article class="seccion"><h3 class="precios">Loratadina- Precio: $60.00</h3><img src="img/loratadina.jpg" alt="loratadina" class="medicamentos"><button type="button" class="botonCarrito" value="0" onclick="agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+        
+        <article class="seccion"><h3 class="precios">Tafirol- Precio: $65.00</h3><img src="img/tafirol.jpg" alt="tafirol" class="medicamentos"><button type="button" class="botonCarrito" id="botonCarrito" value="0" onclick="agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+        
+        <article class="seccion"><h3 class="precios">Tafirol 500- Precio: $70.00</h3><img src="img/tafirol500.jpg" alt="tafirol500" class="medicamentos"><button type="button" class="botonCarrito" value="0" onclick="agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+        
+        <article class="seccion"><h3 class="precios">Tafirol Forte- Precios: $80.00</h3><img src="img/tafirolforte.jpg" alt="tafirolforte" class="medicamentos"><button type="button" value="0" class="botonCarrito" onclick="agregarElementosAlCarrito();"><img src="img/agregarCarro.png" alt="agregar" class="agregar"></button></article>
+       </section>
+        <h3 id="pagos" name="pagos">Medios de Pago</h3>
+
+        <article class="medios"><img src="img/mercadopago.jpg" class="mediosDePago1"></article>
+        <article class="medios"><img src="img/efectivo.jpg" class="mediosDePago1"></article>
+        <article class="medios"><img src="img/debito.jpg" class="mediosDePago"></article>
+        <article class="medios"><img src="img/credito.jpg" class="mediosDePago"></article>
+     
+	</main>
+
+	<footer>
+		<div class="pie">
+			
+			<p class="p2">Rede Sociales:</p>
+			<ul>
+			<li id="redes" name="redes"><a href="http://www.instagram.com" target="_blank" class="nombresRedes">Instagram<img src="img/instagram.jpg" class="redes"></a></li>
+			<li><a href="http://www.youtube.com" target="_blank" class="nombresRedes">Youtube <img src="img/youtube.jpg" class="redes"></a></li>
+			<li><a href="http://www.twitter.com" target="_blank" class="nombresRedes">Twitter <img src="img/twitter.jpg" class="redes"></a></li>
+			<li><a href="http://www.facebook.com" target="_blank" class="nombresRedes">Facebook <img src="img/facebook.jpg" class="redes"></a></li>
+			</ul>
+		</div>
+        
+        <div class="pie">
+        	<p class="p2">Informacion Adicional:</p>
+        	<p class="p1">E-mail: farmacia@hotmail.com.ar</p>
+        	<p class="p1">Tel: 1122-3344</p>
+        	<p class="p1">Trabajar con nosotros</p>
+        	<p class="p1">Contactanos</p>	
+        </div>
+
+        
+        <div class="pie">
+        	<p class="p2">Horario de atencion: De lunes a domingos las 24hs </p>
+        	<p class="p2">Direccion:</p>
+        	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13124.516003201528!2d-58.6058167!3d-34.67669355!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1537730573612" allowfullscreen></iframe>
+        </div>
+	</footer>
+	
+</body>
+</html>
