@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+
+    <title>Eye Training</title>
+  </head>
+  <body>
+    <header>
+
+      <div class="container-fluid ">
+        <div class="row">
+            <nav class="col-12 navbar navbar-expand-lg menu fixed-top">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logoPrincipalLargo.png" class="logo" alt="imagenLogo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon menuHamburguesa"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white mx-2" href="index.html">EyeTraining</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2" href="#contacto1" >Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white mx-2" href="#">Noticias</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+
+
+
+
+     <div class="container-fluid">
+    <div class=" row">
+      <div>
+       <img  class="img-responsive col-md-12" src="img/banner.jpg">
+         </div>
+        <div class="caption col-12">
+          <h2>VISION++</h2>
+          <h3>Descubra una nueva realidad</h3>
+          <h4 class="h41">Ofrecemos software a medida para</h4>
+          <h4 class="h42">que dé un paso hacia el futuro</h4>
+        </div>
+    </div>
+    </div>
+
+          <div class="container-fluid">
+
+        <div class="row caja justify-content-center">
+           <button type="button" class="boton"><a class="nav-link mx-2" href="#" id="contacto1" data-toggle="modal" data-target="#miModal">CONTACTO</a></button>                 
+           
+
+        <div class="col-12">
+                <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="miModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="">
+                                    Contacto
+                                </h5>
+                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col">
+                                            <form action="#" method="gets" onsubmit="return validar()">
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="nombre">Nombre:</label>
+                                                        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >
+                                                        <small id="errorNombre" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <small id="errorNombre" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="dni">DNI:</label>
+                                                        <input class="form-control" type="text" id="dni" name="dni" placeholder="DNI">
+                                                        <small id="errorDni" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="fechaDeNacimiento">Fecha de Nacimiento:</label>
+                                                        <input class="form-control" type="text" id="datepicker" onclick="fecha();">
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="email">Email:</label>
+                                                        <input class="form-control" type="email" id="email" name="email" placeholder="Email" >
+                                                        <small id="errorEmail" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="asunto">Asunto:</label>
+                                                        <input class="form-control" type="text" id="asunto" name="asunto" placeholder="Asunto" >
+                                                        <small id="errorAsunto" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <label for="mensaje">Mensaje:</label>
+                                                        <textarea class="form-control mb-3" name="mensaje" id="mensaje" placeholder="Mensaje" ></textarea>
+                                                        <small id="errorMensaje" class="form-text"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grup row">
+                                                    <div class="col-12">
+                                                        <input class="contacto" type="submit" value="Enviar">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+<footer class="pie justify-content-around align-items-center">
+        <div class="container-fluid pie-footer">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 col-pie">
+                <img src="img/telefono.png" alt="" class="imagen-pie">
+                <small class="text-white">0800-666-3312</small>
+            </div>
+            
+                <div class="col-xs-12 col-md-4 col-pie">
+                <img src="img/casa.png" alt="" class="imagen-pie">
+                <small class="text-white">Av. Eduardo Madero 420,C1106 CABA</small>
+            </div>
+            
+            
+            <div class="col-xs-12 col-md-4 col-pie">
+                <button type="button" class="botonPie">
+                    Solicite Información
+                </button>
+            </div>
+            </div>
+            </div>
+        </footer>
+    
+        
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/miJavaScript.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+
+    </body>
+</html>

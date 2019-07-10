@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie-edger">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/miEstilos.css">
+    <title>Document</title>
+</head>
+<style>
+    .div1 {
+        margin-top: 50px;
+        width: 500px;
+        height: 500px;
+    }
+
+    .div2 {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+    }
+
+    .imaRedondeada {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+
+    .sombra {
+        -webkit-box-shadow: 0px 0px 13px 9px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 13px 9px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 13px 9px rgba(0, 0, 0, 0.2);
+    }
+
+    .circuloChico {
+        height: 90px;
+        width: 90px;
+        border: 10px solid #fff;
+        margin: auto;
+    }
+
+    .circuloGrande {
+        height: 110px;
+        width: 110px;
+    }
+
+</style>
+
+<body>
+    <div class="conteiner">
+        <div class="row mt-3 ml-5">
+            <div class="col-6">
+                <div class="div1 sombra d-flex rounded-circle">
+                    <div class="div2 sombra d-flex rounded-circle">
+                        <img class="imaRedondeada rounded-circle" src="img/imgRedondeada.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="bg-primary d-flex rounded-circle circuloGrande">
+                            <div class="bg-primary d-flex rounded-circle circuloChico">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script scr="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/miJavaScript.js"></script>
+
+</html>
